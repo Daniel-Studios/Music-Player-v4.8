@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" autor="Daniel2019Creator1"/>
+        <meta name="author" content="Daniel2019Creator1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+        <title class="title" title="Music-Player-v4.8" value="Music-Player-v4.8">Music-Player-v4.8</title>
+        <script>
+            console.log=function(){};
+            console.error=function(){};
+        </script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+        <link href="https://fonts.googleapis.com/css?family=Changa+One|Roboto&display=swap" rel="stylesheet"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="style.css"/>
+        <script rel="stylesheet" href="style.css"></script>
+        <link href="script.js"/>
+        <script src="script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
+        <link href="https://fontawesome.com/v4.7.0/icons/"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"/>
+        <script src="https://codelite9006.github.io/js/playlist1.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    </head>
+    <body >
+        <div class="loading" id="loading">
+
+            <p class="loading-text">Loading . . .</p>
+            <p class="by">Music Player by:<br>Daniel Shively</p>
+
+        </div>
+        <div class="main-container">
+
+            <div class="left-pannel">
+                <div class="left-pannel__top">
+    <nav id="nav" align="center">
+                <div onclick="navHandler();" class="menu icon">
+        <i class="material-icons" id="fa fa-bars" Unicode="f0c9">menu</i>
+        </div>
+        <br>
+        <div align="center" onclick="opensearch()" class="search icon">
+        <i class="material-icons" id="fa fa-search" Unicode="f002" align="center">search</i>
+        </div>
+    </nav>
+    <div id="sbar" class="searchbar">
+        <div onclick="closesearch()" class="back icon">
+        <i class="material-icons" id="fa fa-arrow-left" Unicode="f060">arrow_back</i>
+        </div>
+        <input oninput="search()" placeholder="Search music..." id="inp"/>
+    </div>
+                    <div class="left-pannel__play_list"><i class="material-icons icon">library_music</i></div>
+
+                </div>
+                <div class="left-pannel__bottom">
+                    <div class="left-pannel__favorite" onclick="generateElements(false);">_English</div>
+                    <div class="left-pannel__anime" onclick="generateElements(true);">K-POP</div>
+                </div>
+            </div>
+
+
+            <div class="nav-container" onclick="navHandler();">
+                <div class="nav">
+                <div onclick="navHandler();" class="crossm" style="color:red;" color="red">
+                <i class="material-icons" id="fa fa-times" Unicode="f00d" style="color:red;" color="red">&#9587;</i>
+                </div>
+                    
+                    <div class="Credits">
+                    <br />
+                    Music Player
+                    <br />
+                    By: Daniel Shively
+                    </div>
+                    <div class="nav-bottom">
+                        <p class="select-theme">Select Theme: </p>
+                        <div class="themes">
+                            <div class="theme theme1" onclick="changeTheme(0);"></div>
+                            <div class="theme theme2" onclick="changeTheme(1);"></div>
+                            <div class="theme theme3" onclick="changeTheme(2);"></div>
+                            <div class="theme theme4" onclick="changeTheme(3);"></div>
+                            <div class="theme theme5" onclick="changeTheme(4);"></div>
+                            <div class="theme theme6" onclick="changeTheme(5);"></div>
+                            <div class="theme theme7" onclick="changeTheme(6);"></div>
+                            <div class="theme theme8" onclick="changeTheme(7);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top">
+                <div class="cards-holder">
+
+                    <!-- Appending Cards from JavaScript -->
+
+                </div>
+            </div>
+
+            <div class="list-view">
+
+                <!-- Appending List_Of_Songs from JavaScript -->
+
+            </div>
+
+
+            <div class="bottom-pannel">
+
+                <div class="bottom__warpper">
+                    <i class="material-icons bottom__up-arrow icon" onclick="drawerHandler();">
+                        keyboard_arrow_up
+                    </i>
+
+
+                    <div class="bottom__song-info">
+                        <div id="bottomSongName">End Of Time</div>
+                        <div id="bottomSingerName">Alan Walker</div>
+                    </div>
+                </div>
+
+                <div class="bottom__progress-warpper">
+
+                    <div id="progressTimeDuration">00:00 / 00:00</div>
+
+                    <div id="bottomProgress">
+                        <div id="bufferedBar"></div>
+                        <div id="bottomBar"></div>
+                    </div>
+
+                    <div class="bufferingStats">Buffering...</div>
+
+                </div>
+
+                <i class="material-icons bottom__play-button icon" id="play-btn" onclick="playPause()">
+                    play_arrow
+                </i>
+
+            </div>
+
+            <div class="bottom-drawer">
+
+                <div class="drawer-holder">
+
+                    <i class="material-icons bottom__up-arrow icon" onclick="drawerHandler();">
+                        keyboard_arrow_up
+                    </i>
+
+                    <div class="drawer">
+
+                        <div class="darwer__column1 column">
+                            <div id="prev" onclick="prevSong();"><i class="material-icons icon" style="font-size: 2em;">change_history</i></div>
+
+                            <div class="song-album-art-holder">
+                                <div id="songAlbumArt"></div>
+                                <div class="drawer-song-play-btn"><i class="material-icons icon" id="drawerPlay" style="font-size: 2.5em;" onclick="playPause()">play_arrow</i></div>
+                            </div>
+
+                            <div id="next" onclick="nextSong();"><i class="material-icons icon" style="font-size: 2em;">change_history</i></div>
+                        </div>
+
+                        <div class="darwer__column2 column">
+                            <div id="drawerSongName">Here To Never Giving Up</div>
+                            <div id="drawerSingerName">Alan Waler | 300 Time Played </div>
+                        </div>
+
+                        <div class="darwer__column3 column">
+                            <div id="drawerCurrentTime">00:00</div>
+                            <div id="dawerProgress" >
+                                <div id="drawerBufferedBar"></div>
+                                <div id="drawerBar"></div>
+                            </div>
+                            <div id="drawerSongDuration">03:51</div>
+                        </div>
+
+                        <div class ="drawer__column4 column">
+                            <i class="material-icons icon" id="repeat">
+                                repeat_one
+                            </i>
+
+                            <i class="material-icons icon" id="favorite">
+                                favorite_border
+                            </i>
+
+                            <i class="material-icons icon" id="drawerStopButton">
+                                stop
+                            </i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div id="toast"><p id="toastText"></p></div>
+        <div class="not-supported"><p>Sorry Minimum 350px Screen Height Required.</p></div>
+
+        <audio id="media-player" preload loop>
+            <source id="audio-source" src="https://abdul-moqueet.github.io/music-player/songs/End_Of_Time.mp3" type="audio/mpeg">
+        </audio>
+
+    </body>
+</html>
